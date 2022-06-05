@@ -36,9 +36,9 @@ export class CategoryComponent implements OnInit {
   onDelete(id: number) {
     if (confirm('bạn có muốn xóa ko?')) {
       this.cateService.delete(id).subscribe((res: any) => {
-        this.getList();
       })
     }
+    return this.getList();
   }
 
   onSubmit(){

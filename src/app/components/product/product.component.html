@@ -1,0 +1,34 @@
+<h2>DANH SÁCH SẢN PHẨM</h2>
+
+<div class="form-floating mb-3">
+    <input type="text" placeholder="Search" class="form-control" class="form-control" id="floatingInput"
+        (keyup)="onSearch($event)" value="">
+    <label for="floatingInput">Tìm kiếm trong danh mục</label>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>cat_name</th>
+            <th>status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pro of products ">
+            <td>{{pro.id}}</td>
+            <td>{{pro.name}}</td>
+            <td>{{pro.price}}</td>
+            <td>{{pro.category_id}}</td>
+            <td class="label label-success" *ngIf="pro.status == 1">Hiển thị</td>
+            <td class="label label-warning" *ngIf="pro.status == 0">Tạm ẩn</td>
+            <td>
+                <button class="btn btn-small btn-primary"  type="button" data-bs-toggle="modal"
+                    data-bs-target="#EditModal">Sửa</button>
+                <button class="btn btn-small btn-danger" (click)="onDelete(pro.id)" type="button">Xóa</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

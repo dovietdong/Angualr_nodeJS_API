@@ -7,12 +7,18 @@ import { HomeComponent } from './components/home/home.component';
 import { CategoryComponent } from './components/category/category.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductComponent } from './components/product/product.component';
+import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    ProductComponent,
+    ProductCreateComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
